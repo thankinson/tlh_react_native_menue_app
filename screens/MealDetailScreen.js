@@ -2,11 +2,13 @@ import { useLayoutEffect } from "react";
 import { View, StyleSheet, Image, ScrollView, Button } from "react-native";
 import { MEALS } from "../data/dummy-data";
 
-// import IconButton from "../components/iconButton";
 
 import MealDetail from "../components/MealDetail";
 import TextTitle from "../components/TextTitle";
 import List from "../components/List";
+
+// import IconButton from "../components/iconButton";
+
 
 export default function MealDetailScreen({route, navigation }){
 
