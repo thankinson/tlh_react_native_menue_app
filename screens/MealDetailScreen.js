@@ -1,5 +1,5 @@
-import { useLayoutEffect } from "react";
-import { View, StyleSheet, Image, ScrollView, Button } from "react-native";
+import { useLayoutEffect, useEffect } from "react";
+import { View, StyleSheet, Image, ScrollView} from "react-native";
 import { MEALS } from "../data/dummy-data";
 
 
@@ -7,8 +7,7 @@ import MealDetail from "../components/MealDetail";
 import TextTitle from "../components/TextTitle";
 import List from "../components/List";
 
-// import IconButton from "../components/iconButton";
-
+import IconButton from "../components/IconButton";
 
 export default function MealDetailScreen({route, navigation }){
 
@@ -16,17 +15,17 @@ export default function MealDetailScreen({route, navigation }){
     
     const selectedMeal = MEALS.find((meal)=> meal.id === mealId);
 
-    // function headerButtonPressHandler(){
-    //   console.log('pressed')
-    // }
+    function headerButtonPressHandler(){
+      console.log('pressed')
+    }
 
-    // useLayoutEffect(()=>{
-    //   navigation.setOptions({
-    //     headerRight: ()=> {
-    //       return <IconButton icon='star' color='white' onPress={headerButtonPressHandler}/>
-    //     }
-    //   })
-    // },[navigation, headerButtonPressHandler])
+    useLayoutEffect(()=>{
+      navigation.setOptions({
+        headerRight: ()=> {
+          return <IconButton onPress={headerButtonPressHandler}/>
+        }
+      })
+    },[navigation, headerButtonPressHandler])
 
     return (
         <ScrollView style={styles.rootContainer}>
